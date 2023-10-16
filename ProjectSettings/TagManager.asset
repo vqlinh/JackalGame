@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Bullet
+  - Grenade
+  - Gate
+  - BulletAI
+  - Crep
+  - Character
+  - BulletTank
+  - Rocket
+  - TankAi
+  - Bot
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - 
+  - Player
+  - Grenade
+  - Tank
+  - box
+  - Boundary
+  - Crep
+  - BulletAI
+  - BulletTank
+  - BulletPlayer
+  - Gate
+  - Rocket
+  - Bot
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
