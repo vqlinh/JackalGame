@@ -38,7 +38,7 @@ public class Rocket : MonoBehaviour
     void FireGrenade()
     {
         timeFire = TimeFire;
-        GameObject RocketTMP = Instantiate(rocket, FireposX.position, Quaternion.identity);
+        GameObject RocketTMP = Instantiate(rocket, FireposX.position, FireposX.rotation);
         Rigidbody2D rb = RocketTMP.GetComponent<Rigidbody2D>();
         rb.AddForce(CharacterSR.transform.up * GrenadeForce, ForceMode2D.Impulse);
     }

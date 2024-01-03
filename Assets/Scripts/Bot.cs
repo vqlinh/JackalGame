@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.SocialPlatforms;
+﻿using UnityEngine;
 
 public class Bot : MonoBehaviour
 {
@@ -20,6 +17,7 @@ public class Bot : MonoBehaviour
 
     private bool isInChaseRange;
     private bool isInAttackRange;
+    private bool isDie = true;
 
     public float moveSpeed;
     public float minDistance;
@@ -41,12 +39,12 @@ public class Bot : MonoBehaviour
         target = GameObject.FindWithTag("Player").transform;
         shotCounter = timeBetweenShots;
     }
+
     private void Update()
     {
         anim.SetBool("IsRun", isInChaseRange);
         isInChaseRange = Physics2D.OverlapCircle(transform.position, checkRadius, whatisPlayer);
         isInAttackRange = Physics2D.OverlapCircle(transform.position, attackRadius, whatisPlayer);
-
         dir = target.position - transform.position;
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         dir.Normalize();
@@ -62,14 +60,13 @@ public class Bot : MonoBehaviour
     {
         if (Vector2.Distance(transform.position, target.position) < range)
         {
-            transform.position = Vector2.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
-           
+            if (isDie)
+            {
+                transform.position = Vector2.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
+            }
         }
-       
         if (isInAttackRange)
         {
-            // rb.velocity = Vector2.zero;
-
             if (Vector2.Distance(transform.position, target.position) < minDistance)
             {
                 if (shotCounter <= 0)
@@ -80,29 +77,27 @@ public class Bot : MonoBehaviour
                     BulletIns.GetComponent<Rigidbody2D>().AddForce(Direction * Force);
                     shotCounter = timeBetweenShots;
                 }
-                else
-                {
-                    shotCounter -= Time.deltaTime;
-                }
+                else shotCounter -= Time.deltaTime;
             }
         }
     }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Bullet") )
+        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Bullet"))
         {
-            anim.SetBool("IsDie", true);
-
-            Destroy(gameObject, Timetodie);
-            Destroy(collision.gameObject);
-        }
-        if ( collision.gameObject.CompareTag("Grenade") || collision.gameObject.CompareTag("Player"))
-        {
+            isDie = false;
             anim.SetBool("IsDie", true);
             Destroy(gameObject, Timetodie);
-
+            GameManager.instance.AudioDestroyEnemy();
         }
-
     }
-
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        other.gameObject.CompareTag("Grenade");
+        isDie = false;
+        anim.SetBool("IsDie", true);
+        Destroy(gameObject, Timetodie);
+        GameManager.instance.AudioDestroyEnemy();
+    }
 }

@@ -7,11 +7,17 @@ public class GunZ : MonoBehaviour
     public float BulletForce;
     public GameObject Bullet;
     private float timeFire;
+    public GameObject hitBullet;
+
 
     void Update()
     {
         timeFire -= Time.deltaTime;
-        if (Input.GetKey((KeyCode)'z') && timeFire < 0) FireBulelt();
+        if (Input.GetKey((KeyCode)'z') && timeFire < 0)
+        {
+            GameManager.instance.AudioBullet();
+            FireBulelt();
+        }
 
     }
 
@@ -23,10 +29,12 @@ public class GunZ : MonoBehaviour
         rb.AddForce(transform.up * BulletForce, ForceMode2D.Impulse);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Gate")|| collision.gameObject.CompareTag("Crep"))
-            collision.gameObject.SetActive(false);
-    }
+    // private void OnCollisionEnter2D(Collision2D collision)
+    // {
+
+    //     if (collision.gameObject.CompareTag("Gate") || collision.gameObject.CompareTag("Crep"))
+    //         collision.gameObject.SetActive(false);
+    // }
+
 }
 

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7143808929168475903}
   - component: {fileID: 8093326286052048994}
   - component: {fileID: -1891016239393845663}
+  - component: {fileID: -6997327504890724383}
   m_Layer: 19
   m_Name: Jeep_150
   m_TagString: Grenade
@@ -73,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -944310639781732868, guid: bfe245cd3b7df3e4ca414864220892ff,
+  m_Sprite: {fileID: -5102972758513034558, guid: bfe245cd3b7df3e4ca414864220892ff,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -105,7 +106,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &8093326286052048994
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -123,7 +124,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.12, y: 0.08}
+    oldSize: {x: 0.07, y: 0.12}
     newSize: {x: 0.12, y: 0.08}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -144,4 +145,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20cf03c25c9270d45af0942c1cd024a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Time: 1
+  Time: 0.55
+--- !u!114 &-6997327504890724383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3982489169426762246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c3e406b3b2a60342a7965668b6580a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitEffect: {fileID: 4511762771311629936, guid: 97ec2189c7fb6764cb5701c2643a33ac,
+    type: 3}
+  lifeTime: 0.5

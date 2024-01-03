@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1046759582411634303}
   - component: {fileID: 1046759582411634302}
   - component: {fileID: 1046759582411634301}
-  - component: {fileID: -1039232329647718912}
+  - component: {fileID: 1487296868}
   m_Layer: 10
   m_Name: Grenade (1)
   m_TagString: Grenade
@@ -107,7 +107,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &1046759582411634303
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -166,7 +166,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &-1039232329647718912
+--- !u!114 &1487296868
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -175,6 +175,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1046759582411634300}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b541d06b899a324aa00fedf0d78132f, type: 3}
+  m_Script: {fileID: 11500000, guid: 2c3e406b3b2a60342a7965668b6580a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitEffect: {fileID: 4511762771311629936, guid: 97ec2189c7fb6764cb5701c2643a33ac,
+    type: 3}
+  lifeTime: 0.9

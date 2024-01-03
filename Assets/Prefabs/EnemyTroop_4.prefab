@@ -160,7 +160,7 @@ MonoBehaviour:
   bullet: {fileID: 8654856044432260733, guid: e8d4228f480325549b77bb8f6f7e3f8a, type: 3}
   ShootPoint: {fileID: 1848453462327518785}
   range: 1
-  Force: 30
+  Force: 50
   Timetodie: 0.2
 --- !u!61 &1848453462758311352
 BoxCollider2D:
@@ -172,7 +172,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}

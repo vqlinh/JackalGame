@@ -5,13 +5,11 @@ using UnityEngine;
 public class AnmNade : MonoBehaviour
 {
     private Animator Grenade;
-    private Rigidbody2D rb;
     private bool isFlying = false; // Khởi tạo biến kiểm tra grenade đã được phóng lên hay chưa
 
     private void Awake()
     {
         Grenade = GetComponent<Animator>();
-        rb = GetComponent<Rigidbody2D>();
         StartCoroutine(ExplodeAfterDelay());
         Grenade.SetBool("fly", false);
     }
@@ -28,8 +26,7 @@ public class AnmNade : MonoBehaviour
 
     private IEnumerator ExplodeAfterDelay()
     {
-        yield return new WaitForSeconds(0.8f);
-        rb.velocity = Vector2.zero;
+        yield return new WaitForSeconds(0.9f);
         IsExplosion();
         yield return new WaitForSeconds(0.2f);
         Destroy(gameObject);

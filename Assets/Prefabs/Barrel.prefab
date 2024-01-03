@@ -103,6 +103,8 @@ MonoBehaviour:
   FireRate: 0.7
   ShootPos: {fileID: 6758860530345730258}
   Force: 30
+  bumEffect: {fileID: 4511762771311629936, guid: 97ec2189c7fb6764cb5701c2643a33ac,
+    type: 3}
 --- !u!61 &5106765677809897549
 BoxCollider2D:
   m_ObjectHideFlags: 0

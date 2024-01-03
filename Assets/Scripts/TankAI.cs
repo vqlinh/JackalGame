@@ -1,26 +1,26 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class TankAI : MonoBehaviour
 {
-    public float Range;
-    public Transform Target;
-    bool Detected = false;
     Vector2 Direction;
-    public GameObject Gun;
-    public GameObject Bullet;
-    public float FireRate;
-    float nextTimeToFire = 0;
-    public Transform ShootPos;
+    public float Range;
     public float Force;
     private int count = 0;
+    bool Detected = false;
+    public float FireRate;
+    public GameObject Gun;
+    public Transform Target;
+    public GameObject Bullet;
+    float nextTimeToFire = 0;
+    public Transform ShootPos;
+    public GameObject bumEffect;
 
     void Update()
     {
         Vector2 targetPos = Target.position;
         Direction = targetPos - (Vector2)transform.position;
-        RaycastHit2D rayInfo = Physics2D.Raycast(transform.position, Direction, Range,1<<LayerMask.NameToLayer("Player"));
+        RaycastHit2D rayInfo = Physics2D.Raycast(transform.position, Direction, Range, 1 << LayerMask.NameToLayer("Player"));
         if (rayInfo)
         {
             if (rayInfo.collider.gameObject.tag == "Player")
@@ -48,12 +48,25 @@ public class TankAI : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Grenade")|| collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Grenade") || collision.gameObject.CompareTag("Player"))
         {
             gameObject.SetActive(false);
+            GameManager.instance.AudioDestroyTank();
+            GameObject effect = Instantiate(bumEffect, transform.position, Quaternion.identity);
+            Destroy(effect, 0.5f);
         }
-        if (collision.gameObject.CompareTag("Bullet")) count++;
-        if (count==3) gameObject.SetActive(false);
+        if (collision.gameObject.CompareTag("Bullet"))
+        {
+            GameManager.instance.AudioBulletAttack();
+            count++;
+        }
+        if (count == 3)
+        {
+            gameObject.SetActive(false);
+            GameManager.instance.AudioDestroyTank();
+            GameObject effect = Instantiate(bumEffect, transform.position, Quaternion.identity);
+            Destroy(effect, 0.5f);
+        }
     }
 
     void shoot()
