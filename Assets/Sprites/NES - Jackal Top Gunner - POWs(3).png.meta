@@ -813,9 +813,9 @@ TextureImporter:
       name: NES - Jackal Top Gunner - POWs(3)_29
       rect:
         serializedVersion: 2
-        x: 119
+        x: 122
         y: 103
-        width: 16
+        width: 10
         height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -834,9 +834,9 @@ TextureImporter:
       name: NES - Jackal Top Gunner - POWs(3)_30
       rect:
         serializedVersion: 2
-        x: 136
+        x: 138
         y: 103
-        width: 17
+        width: 12
         height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -855,9 +855,9 @@ TextureImporter:
       name: NES - Jackal Top Gunner - POWs(3)_31
       rect:
         serializedVersion: 2
-        x: 153
+        x: 154
         y: 103
-        width: 16
+        width: 13
         height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}

@@ -6,6 +6,8 @@ public class nhalinhno : MonoBehaviour
 {
     private Animator nhalinh;
     private BoxCollider2D bc;
+    public Soldier soldier;
+
 
     void Start()
     {
@@ -20,6 +22,8 @@ public class nhalinhno : MonoBehaviour
         {
             nhalinh.SetBool("nhalinhno", true);
             bc.enabled = false;
+            soldier.Show();
+
         }
     }
 }
