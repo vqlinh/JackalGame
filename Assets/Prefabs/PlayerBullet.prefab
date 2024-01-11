@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5151911068577858357}
   - component: {fileID: 727369591394284232}
   - component: {fileID: 4805258756070072168}
-  - component: {fileID: 9078009139232925149}
+  - component: {fileID: -1627829864553455846}
   m_Layer: 17
   m_Name: PlayerBullet
   m_TagString: Bullet
@@ -158,7 +158,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dc87ae1ad96f2a45b2f8caf5dda7317, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &9078009139232925149
+--- !u!114 &-1627829864553455846
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -167,9 +167,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 4464500078050888703}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c3e406b3b2a60342a7965668b6580a1, type: 3}
+  m_Script: {fileID: 11500000, guid: 2b0679ae92e0abe49bb11d05b3dd424e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   hitEffect: {fileID: 5876318409866848298, guid: ea9bec9f19ae2b546b79664ecf11aeac,
     type: 3}
-  lifeTime: 0.3
+  lifeTime: 0.39

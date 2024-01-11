@@ -11,7 +11,9 @@ GameObject:
   - component: {fileID: 7922646928706069696}
   - component: {fileID: 4855585110300095184}
   - component: {fileID: 8556812808295409306}
-  - component: {fileID: 8025324951772380859}
+  - component: {fileID: 825809912}
+  - component: {fileID: 825809913}
+  - component: {fileID: 825809916}
   m_Layer: 0
   m_Name: powerup
   m_TagString: Gate
@@ -96,7 +98,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.018913329, y: 0.081053376}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -107,9 +109,28 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.56, y: 1.26}
+  m_Size: {x: 1.2321678, y: 1.0978932}
   m_EdgeRadius: 0
---- !u!114 &8025324951772380859
+--- !u!95 &825809912
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7237206796369986457}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 026065fbe54ac7745851788dc2fb5f5d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &825809913
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -118,6 +139,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 7237206796369986457}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 130044c24c12db34eb002b5a59289f0f, type: 3}
+  m_Script: {fileID: 11500000, guid: 47f8b60343eb4fc40874a0afd7ef0dcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soldier: {fileID: 0}
+--- !u!114 &825809916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7237206796369986457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7bab007ca9f69c4c8cba2acdcda63fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

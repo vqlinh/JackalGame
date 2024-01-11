@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     public AudioClip bg;
     public AudioClip destroyTank;
     public AudioClip destroyEnemy;
+    public AudioClip grenade;
+    public AudioClip grenadeExplosion;
 
     public static GameManager instance;
 
@@ -44,5 +46,13 @@ public class GameManager : MonoBehaviour
     public void AudioDestroyEnemy()
     {
         audioSource.PlayOneShot(destroyEnemy);
+    }
+    public void AudioGrenade()
+    {
+        audioSource.PlayOneShot(grenade);
+    }
+    public void AudioGrenadeExplosion()
+    {
+        audioSource.PlayOneShot(grenadeExplosion);
     }
 }

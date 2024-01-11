@@ -18,5 +18,6 @@ public class Grenade : MonoBehaviour
     {
         Instantiate(hitEffect, transform.position, Quaternion.identity);
         Destroy(gameObject);
+        GameManager.instance.AudioGrenadeExplosion();
     }
 }

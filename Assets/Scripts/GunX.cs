@@ -39,6 +39,7 @@ public class GunX : MonoBehaviour
         GameObject GrenadeTMP = Instantiate(Grenade, FireposX.position, Quaternion.identity);
         Rigidbody2D rb = GrenadeTMP.GetComponent<Rigidbody2D>();
         rb.AddForce(CharacterSR.transform.up * GrenadeForce, ForceMode2D.Impulse);
+        GameManager.instance.AudioGrenade();
     }
 }
 

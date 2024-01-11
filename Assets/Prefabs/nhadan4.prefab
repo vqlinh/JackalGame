@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -1562536165496086260}
   - component: {fileID: 4638463617092875999}
   - component: {fileID: 1067995319}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: nhadan4
   m_TagString: Gate
   m_Icon: {fileID: 0}
@@ -96,6 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f232350543a1e284491bbb909445c868, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyphai: {fileID: 0}
 --- !u!61 &4638463617092875999
 BoxCollider2D:
   m_ObjectHideFlags: 0

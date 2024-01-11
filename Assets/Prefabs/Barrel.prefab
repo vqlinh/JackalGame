@@ -96,13 +96,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 519767976fbca814d8aa29378bc13664, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Range: 0.8
-  Target: {fileID: 0}
-  Gun: {fileID: 6758860531288771879}
-  Bullet: {fileID: 231811505280624568, guid: 9853d0901312a3d4e97e7610b28e231c, type: 3}
+  Range: 1.5
+  Force: 40
   FireRate: 0.7
+  Gun: {fileID: 6758860531288771879}
+  Target: {fileID: 0}
+  Bullet: {fileID: 231811505280624568, guid: 9853d0901312a3d4e97e7610b28e231c, type: 3}
   ShootPos: {fileID: 6758860530345730258}
-  Force: 30
   bumEffect: {fileID: 4511762771311629936, guid: 97ec2189c7fb6764cb5701c2643a33ac,
     type: 3}
 --- !u!61 &5106765677809897549

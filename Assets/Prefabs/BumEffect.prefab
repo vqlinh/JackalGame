@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -8603662787095230750}
   - component: {fileID: 4076953853755243076}
   - component: {fileID: 8509323370085037285}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BumEffect
   m_TagString: Grenade
   m_Icon: {fileID: 0}
