@@ -31,7 +31,6 @@ public class Bot : MonoBehaviour
     private float shotCounter;
     public float Timetodie;
 
-
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -60,10 +59,7 @@ public class Bot : MonoBehaviour
     {
         if (Vector2.Distance(transform.position, target.position) < range)
         {
-            if (isDie)
-            {
-                transform.position = Vector2.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
-            }
+            if (isDie) transform.position = Vector2.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
         }
         if (isInAttackRange)
         {
@@ -92,6 +88,7 @@ public class Bot : MonoBehaviour
             GameManager.instance.AudioDestroyEnemy();
         }
     }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         other.gameObject.CompareTag("Grenade");

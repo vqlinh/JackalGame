@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class Destroy : MonoBehaviour
+public class GateDestroy : MonoBehaviour
 {
     private void OnCollisionEnter2D(Collision2D collision)
     {

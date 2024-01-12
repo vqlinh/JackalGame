@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1848453462327518785}
-  m_Layer: 14
+  m_Layer: 20
   m_Name: Pos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,9 +43,9 @@ GameObject:
   - component: {fileID: 1848453462758311354}
   - component: {fileID: 1848453462758311353}
   - component: {fileID: 1848453462758311352}
-  m_Layer: 14
+  m_Layer: 20
   m_Name: EnemyTroop_4
-  m_TagString: Crep
+  m_TagString: Bot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

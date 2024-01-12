@@ -9,7 +9,6 @@ public class GunZ : MonoBehaviour
     private float timeFire;
     public GameObject hitBullet;
 
-
     void Update()
     {
         timeFire -= Time.deltaTime;
@@ -18,7 +17,6 @@ public class GunZ : MonoBehaviour
             GameManager.instance.AudioBullet();
             FireBulelt();
         }
-
     }
 
     void FireBulelt()
@@ -28,13 +26,5 @@ public class GunZ : MonoBehaviour
         Rigidbody2D rb = BulletTmp.GetComponent<Rigidbody2D>();
         rb.AddForce(transform.up * BulletForce, ForceMode2D.Impulse);
     }
-
-    // private void OnCollisionEnter2D(Collision2D collision)
-    // {
-
-    //     if (collision.gameObject.CompareTag("Gate") || collision.gameObject.CompareTag("Crep"))
-    //         collision.gameObject.SetActive(false);
-    // }
-
 }
 

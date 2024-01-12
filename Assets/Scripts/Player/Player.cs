@@ -52,16 +52,13 @@ public class Player : MonoBehaviour
         animator.SetFloat("MovementY",movementInput.y);
     }
   
-
-
-
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("BulletAI") || collision.gameObject.CompareTag("BulletTank"))
+        if (collision.gameObject.CompareTag("BulletEnemy") || collision.gameObject.CompareTag("BulletTank"))
         {
             this.gameObject.SetActive(false);
             GameOver();
+            collision.gameObject.SetActive(false);
         }
     }
 

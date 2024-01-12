@@ -7,13 +7,13 @@ TagManager:
   - Bullet
   - Grenade
   - Gate
-  - BulletAI
   - Crep
   - Character
   - BulletTank
   - Rocket
   - TankAi
   - Bot
+  - BulletEnemy
   layers:
   - Default
   - TransparentFX
@@ -29,8 +29,8 @@ TagManager:
   - Tank
   - box
   - Boundary
-  - Crep
-  - BulletAI
+  - 
+  - BulletEnemy
   - BulletTank
   - BulletPlayer
   - Gate
