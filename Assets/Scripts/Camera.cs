@@ -12,8 +12,8 @@ public class Camera : MonoBehaviour
     void Update()
     {
         Vector3 cameraPosition = transform.position;
-        cameraPosition.x = Mathf.Clamp(Player.position.x, -1.17f, float.MaxValue);
-        cameraPosition.y = Mathf.Clamp(Player.position.y, -4f, float.MaxValue);
+        cameraPosition.x = Mathf.Clamp(Player.position.x, -0.73f, float.MaxValue);
+        cameraPosition.y = Mathf.Clamp(Player.position.y, -13.52f, float.MaxValue);
         cameraPosition.z = -20;
         transform.position = cameraPosition;
     }
