@@ -3,8 +3,8 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] private float rotationSpeed = 10f;
-    private Quaternion _targetRotation;
+    //[SerializeField] private float rotationSpeed = 10f;
+    //private Quaternion _targetRotation;
 
     Rigidbody2D rb;
     public float moveSpeed;
@@ -16,7 +16,7 @@ public class Player : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        _targetRotation = transform.rotation;
+        //_targetRotation = transform.rotation;
     }
 
     void Update()
@@ -43,14 +43,14 @@ public class Player : MonoBehaviour
         movementInput = new Vector2(Horizontal, Vertical).normalized;
         rb.velocity = movementInput * moveSpeed * Time.fixedDeltaTime;
         Vector2 direction = new Vector2(Horizontal, Vertical);
-        if (direction.magnitude > 0.1f)
-            transform.rotation = Quaternion.Lerp(transform.rotation, GetTargetRotation(direction), rotationSpeed * Time.deltaTime);
+        //if (direction.magnitude > 0.1f)
+        //    transform.rotation = Quaternion.Lerp(transform.rotation, GetTargetRotation(direction), rotationSpeed * Time.deltaTime);
 
     }
-        private Quaternion GetTargetRotation(Vector2 direction)
-    {
-        return Quaternion.LookRotation(Vector3.forward, direction);
-    }
+    //    private Quaternion GetTargetRotation(Vector2 direction)
+    //{
+    //    return Quaternion.LookRotation(Vector3.forward, direction);
+    //}
     public void Animate()
     {
         animator.SetFloat("MovementX", movementInput.x);
