@@ -1,48 +1,52 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Enemytrai : MonoBehaviour
 {
     public float Speed;
-    public float RightPos;
+    private float rightPos;
     private Animator EnemyAI;
-    // Start is called before the first frame update
+    bool isOnenable = false;
+
     void Start()
     {
         EnemyAI = GetComponent<Animator>();
-        Hide();
     }
-    void Hide()
+
+    private void OnEnable()
     {
-        gameObject.SetActive(false);
+        isOnenable = true;
     }
-    public void Show()
+
+    public void SetRightPos(float pos)
     {
-        gameObject.SetActive(true);
+        rightPos = pos;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            this.gameObject.SetActive(false);
+            gameObject.SetActive(false);
+            Nhadantrai nhadanScript = FindObjectOfType<Nhadantrai>();
+            if (nhadanScript != null) nhadanScript.SpawnNextEnemy();
         }
     }
+
     void Update()
     {
-        if (transform.localPosition.x < RightPos) // Nếu chưa đi hết bên trái
+        if (isOnenable)
         {
-
-            transform.localPosition = Vector2.MoveTowards(transform.localPosition, new Vector2(RightPos, transform.localPosition.y), Speed * Time.deltaTime);
-            EnemyAI.SetBool("Enemytrai", false);
-
-            if (transform.localPosition.x >= RightPos)
+            if (transform.localPosition.x < rightPos)
             {
-                gameObject.transform.localScale = new Vector2(gameObject.transform.localScale.x * -1, gameObject.transform.localScale.y);
-                EnemyAI.SetBool("Enemytrai", true);
+                transform.localPosition = Vector2.MoveTowards(transform.localPosition, new Vector2(rightPos, transform.localPosition.y), Speed * Time.deltaTime);
+                EnemyAI.SetBool("Enemytrai", false);
+
+                if (transform.localPosition.x >= rightPos)
+                {
+                    gameObject.transform.localScale = new Vector2(gameObject.transform.localScale.x * -1, gameObject.transform.localScale.y);
+                    EnemyAI.SetBool("Enemytrai", true);
+                }
             }
         }
     }
-
 }

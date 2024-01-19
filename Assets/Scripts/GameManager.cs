@@ -8,7 +8,6 @@ public class GameManager : MonoBehaviour
     private AudioSource audioSource;
     public AudioClip bullet;
     public AudioClip bulletAttack;
-    public AudioClip bg;
     public AudioClip destroyTank;
     public AudioClip destroyEnemy;
     public AudioClip grenade;
@@ -24,7 +23,6 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        AudioBackground();
     }
 
     public void AudioBullet()
@@ -35,10 +33,7 @@ public class GameManager : MonoBehaviour
     {
         audioSource.PlayOneShot(bulletAttack);
     }
-    public void AudioBackground()
-    {
-        audioSource.PlayOneShot(bg);
-    }
+ 
     public void AudioDestroyTank()
     {
         audioSource.PlayOneShot(destroyTank);
