@@ -3,14 +3,12 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
-    //[SerializeField] private float rotationSpeed = 10f;
-    //private Quaternion _targetRotation;
-
     Rigidbody2D rb;
     public float moveSpeed;
     Vector2 movementInput;
     Animator animator;
     public SpriteRenderer CharacterSR;
+    int count = 0;
 
     private void Start()
     {
@@ -28,7 +26,7 @@ public class Player : MonoBehaviour
             float angle = Mathf.Atan2(movementInput.y, movementInput.x) * Mathf.Rad2Deg;
             CharacterSR.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle - 90));
         }
-        
+
     }
 
     public void Move()
@@ -43,14 +41,9 @@ public class Player : MonoBehaviour
         movementInput = new Vector2(Horizontal, Vertical).normalized;
         rb.velocity = movementInput * moveSpeed * Time.fixedDeltaTime;
         Vector2 direction = new Vector2(Horizontal, Vertical);
-        //if (direction.magnitude > 0.1f)
-        //    transform.rotation = Quaternion.Lerp(transform.rotation, GetTargetRotation(direction), rotationSpeed * Time.deltaTime);
 
     }
-    //    private Quaternion GetTargetRotation(Vector2 direction)
-    //{
-    //    return Quaternion.LookRotation(Vector3.forward, direction);
-    //}
+
     public void Animate()
     {
         animator.SetFloat("MovementX", movementInput.x);
@@ -69,11 +62,20 @@ public class Player : MonoBehaviour
 
     private void GameOver()
     {
-        Invoke("ReloadScene", 2f);
+
+        Invoke("Revival", 2f);
+        count++;
+        if (count==3)  SceneManager.LoadScene("Level1");
     }
 
-    private void ReloadScene()
+    public void Revival()
     {
-        SceneManager.LoadScene("LV1");
+        this.gameObject.SetActive(true);
     }
+
+
+    //private void ReloadScene()
+    //{
+    //    SceneManager.LoadScene("Level1");
+    //}
 }
