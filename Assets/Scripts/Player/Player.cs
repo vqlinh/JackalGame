@@ -52,7 +52,7 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("BulletEnemy") || collision.gameObject.CompareTag("BulletTank"))
+        if (collision.gameObject.CompareTag("BulletEnemy") || collision.gameObject.CompareTag("BulletTank") || collision.gameObject.CompareTag("Boss"))
         {
             this.gameObject.SetActive(false);
             GameOver();
