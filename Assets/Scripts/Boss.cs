@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Boss : MonoBehaviour
 {
@@ -28,9 +29,10 @@ public class Boss : MonoBehaviour
     public float Force;
 
     private float shotCounter;
-    public float Timetodie;
     private Rigidbody2D rb;
-
+    int count = 0;
+    int count1 = 0;
+    private int defeatedBossCount = 0;
 
     private void Start()
     {
@@ -81,12 +83,33 @@ public class Boss : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Bullet") || collision.gameObject.CompareTag("Grenade"))
+        if (collision.gameObject.CompareTag("Bullet"))
         {
-            isDie = false;
-            anim.SetBool("IsDie", true);
-            Destroy(gameObject, Timetodie);
-            GameManager.instance.AudioDestroyEnemy();
+            count++;
+            if (count==5)
+            {
+                isDie = false;
+                Destroy(gameObject);
+                GameManager.instance.AudioDestroyEnemy();
+                defeatedBossCount++;
+                Debug.Log(defeatedBossCount);
+                if (defeatedBossCount == 5)
+                {
+                    // Tất cả boss đã bị tiêu diệt, chuyển sang scene "Win"
+                    SceneManager.LoadScene("WinGame");
+                }
+            }
+            
+        }
+        if (collision.gameObject.CompareTag("Grenade"))
+        {
+            count1++;
+            if (count1==2)
+            {
+                isDie = false;
+                Destroy(gameObject);
+                GameManager.instance.AudioDestroyEnemy();
+            }
         }
     }
 }

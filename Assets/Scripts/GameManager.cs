@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -49,5 +50,24 @@ public class GameManager : MonoBehaviour
     public void AudioGrenadeExplosion()
     {
         audioSource.PlayOneShot(grenadeExplosion);
+    }
+
+    void Update()
+    {
+        CheckBossesRemaining();
+    }
+
+    void CheckBossesRemaining()
+    {
+        GameObject[] bosses = GameObject.FindGameObjectsWithTag("Boss");
+
+        if (bosses.Length == 0)
+        {
+            Invoke("Win", 2f);
+        }
+    }
+    void Win() {
+
+        SceneManager.LoadScene("WinGame");
     }
 }

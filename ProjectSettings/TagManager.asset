@@ -14,6 +14,7 @@ TagManager:
   - TankAi
   - Bot
   - BulletEnemy
+  - Boss
   layers:
   - Default
   - TransparentFX
